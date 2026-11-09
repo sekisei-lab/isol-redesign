@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>イノベーティブ・ソリューションズ｜GeneXus開発・WMS導入支援・業務プロセス改革（改善提案デモ）</title>
+<meta name="description" content="業務プロセスを起点に、GeneXusによる内製化とWMS導入を成功へ導くイノベーティブ・ソリューションズ。">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --navy:#183a54; --navy-2:#244b69; --ink:#1c2a36; --muted:#5a6b7a;
+  --line:#dfe6ec; --bg:#f5f8fa; --accent:#f2b705; --teal:#1fa3a3;
+  /* type scale: 5 steps only */
+  --t-xs:.8125rem; --t-s:.9375rem; --t-m:1.0625rem; --t-l:clamp(1.5rem,2.6vw,2rem); --t-xl:clamp(2.1rem,5vw,3.6rem);
+  --r:16px; --shadow:0 10px 30px rgba(24,58,84,.10);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic UI",system-ui,sans-serif;color:var(--ink);font-size:var(--t-m);line-height:1.8;background:#fff}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding:clamp(64px,9vw,112px) 0}
+.eyebrow{font-size:var(--t-xs);letter-spacing:.18em;font-weight:700;color:var(--teal);text-transform:uppercase}
+h2{font-size:var(--t-l);line-height:1.4;color:var(--navy);margin:.4em 0 .6em}
+.lead{color:var(--muted);max-width:44em}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.85em 1.6em;border-radius:999px;font-weight:700;font-size:var(--t-s);transition:.2s}
+.btn-primary{background:var(--accent);color:#2a2000}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,183,5,.4)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-line{border:1.5px solid var(--navy-2);color:var(--navy-2)}
+.btn-line:hover{background:var(--navy-2);color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:68px}
+.hd img{height:34px;width:auto}
+nav ul{display:flex;gap:28px;list-style:none;padding:0;font-size:var(--t-s);font-weight:500}
+nav a{padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--teal)}
+.hd .btn{padding:.6em 1.3em}
+@media(max-width:860px){nav{display:none}}
+
+/* hero */
+.hero{position:relative;color:#fff;background:linear-gradient(135deg,#0f2a3f 0%,var(--navy) 45%,#1d5a73 100%);overflow:hidden;padding:clamp(72px,10vw,128px) 0 clamp(88px,11vw,140px)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 400px at 85% 20%,rgba(31,163,163,.35),transparent 70%),radial-gradient(500px 400px at 10% 100%,rgba(242,183,5,.12),transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:var(--t-xl);line-height:1.3;letter-spacing:.01em;font-weight:900;margin:.3em 0 .5em}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,rgba(242,183,5,.55) 62%)}
+.hero p{color:#cfe0ea;max-width:34em}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero .eyebrow{color:#7fe0e0}
+.flow{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.flow{max-width:460px}}
+
+/* trust strip */
+.trust{background:#fff;margin-top:-48px;position:relative;z-index:2}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line)}
+.stat{padding:28px 20px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat b{display:block;font-size:var(--t-l);color:var(--navy-2);line-height:1.2;font-weight:900}
+.stat span{font-size:var(--t-xs);color:var(--muted)}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 24px 26px;transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--teal)}
+.card .ico{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy-2),var(--teal));margin-bottom:18px}
+.card .ico svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:var(--t-m);color:var(--navy);line-height:1.4}
+.card p{font-size:var(--t-s);color:var(--muted);margin:.6em 0 1.2em;flex:1}
+.card .more{font-size:var(--t-s);font-weight:700;color:var(--teal)}
+.card .more::after{content:" →"}
+@media(max-width:980px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* purpose */
+.purpose{background:var(--bg)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.steps{display:grid;gap:14px}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:14px;padding:18px 20px;border:1px solid var(--line)}
+.step i{font-style:normal;flex:none;width:36px;height:36px;border-radius:50%;background:var(--navy-2);color:#fff;display:grid;place-items:center;font-weight:700;font-size:var(--t-s)}
+.step b{display:block;color:var(--navy);line-height:1.5}
+.step span{font-size:var(--t-s);color:var(--muted)}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr;gap:32px}}
+
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.case{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);transition:.25s}
+.case:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.case .th{height:170px;display:flex;align-items:flex-end;padding:18px;color:#fff;font-weight:900;font-size:var(--t-l);line-height:1.2}
+.th1{background:linear-gradient(135deg,#1d5a73,#1fa3a3)}
+.th2{background:linear-gradient(135deg,#183a54,#4a6fa5)}
+.th3{background:linear-gradient(135deg,#7a4f01,#f2b705)}
+.case .bd{padding:22px}
+.tag{display:inline-block;font-size:var(--t-xs);font-weight:700;color:var(--teal);background:#e6f6f6;border-radius:999px;padding:.1em .9em;margin-bottom:.6em}
+.case h3{font-size:var(--t-m);line-height:1.55;color:var(--navy)}
+.case p{font-size:var(--t-s);color:var(--muted);margin-top:.5em}
+@media(max-width:860px){.cases{grid-template-columns:1fr}}
+
+/* insights */
+.insight{background:var(--navy);color:#fff}
+.insight h2{color:#fff}
+.insight .eyebrow{color:#7fe0e0}
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.ins{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:26px;transition:.25s}
+.ins:hover{background:rgba(255,255,255,.13);transform:translateY(-4px)}
+.ins .no{font-size:var(--t-xs);color:#7fe0e0;font-weight:700;letter-spacing:.12em}
+.ins h3{font-size:var(--t-m);line-height:1.5;margin:.4em 0}
+.ins p{font-size:var(--t-s);color:#bcd0dc}
+@media(max-width:860px){.ins-grid{grid-template-columns:1fr}}
+
+/* news + partners */
+.split{display:grid;grid-template-columns:1.2fr .8fr;gap:56px}
+.news{list-style:none;padding:0;margin-top:16px}
+.news li{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:var(--t-s)}
+.news time{color:var(--muted);flex:none;width:6.5em;font-variant-numeric:tabular-nums}
+.logos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.logos div{background:#fff;border:1px solid var(--line);border-radius:12px;height:96px;display:grid;place-items:center;padding:14px}
+.logos img{max-height:64px;width:auto;object-fit:contain}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:40px}}
+
+/* cta + footer */
+.final{background:linear-gradient(135deg,var(--navy-2),var(--teal));color:#fff;text-align:center}
+.final h2{color:#fff}
+.final p{color:#e0f3f3;margin-bottom:28px}
+footer{background:#0f2a3f;color:#9fb5c4;font-size:var(--t-xs);padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.demo{background:#fff8dc;color:#6a5200;text-align:center;font-size:var(--t-xs);padding:6px 12px;border-bottom:1px solid #f0e2a0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">改善提案デモ（非公開の検討用モックアップ）／現行サイトの文言と画像を元にビジュアルを再設計</div>
+<header><div class="wrap hd">
+  <a href="#"><img src="img/ISOLlogo_2024_v1.png" alt="イノベーティブ・ソリューションズ"></a>
+  <nav aria-label="メイン"><ul>
+    <li><a href="#services">サービス</a></li><li><a href="#cases">事例</a></li><li><a href="#insight">お役立ち情報</a></li><li><a href="#news">ニュース</a></li><li><a href="#about">私たちについて</a></li><li><a href="#">採用</a></li><li><a href="#">EN</a></li>
+  </ul></nav>
+  <a class="btn btn-primary" href="#contact">お問い合わせ</a>
+</div></header>
+
+<main>
+<section class="hero" style="padding-bottom:clamp(88px,11vw,140px)"><div class="wrap">
+  <div>
+    <span class="eyebrow">Process-Centric DX Partner</span>
+    <h1>業務プロセスを起点に、<br><em>内製化</em>と<em>WMS刷新</em>を<br>確実に成功させる。</h1>
+    <p>As-Isを整理し、To-Beを共に描く。GeneXusによるローコード開発、WMS選定・導入、独自ソリューションまで、フルサイクルで伴走します。</p>
+    <div class="cta"><a class="btn btn-primary" href="#contact">無料で相談する</a><a class="btn btn-ghost" href="#cases">導入事例を見る</a></div>
+  </div>
+  <!-- AS-IS -> TO-BE process visual -->
+  <svg class="flow" viewBox="0 0 440 400" role="img" aria-label="As-IsからTo-Beへ業務プロセスを標準化するイメージ">
+    <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#1fa3a3"/><stop offset="1" stop-color="#f2b705"/></linearGradient></defs>
+    <rect x="10" y="20" width="420" height="360" rx="24" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.25)"/>
+    <text x="36" y="62" fill="#9fc3d4" font-size="14" font-weight="700" letter-spacing="2">AS-IS</text>
+    <g stroke="#9fc3d4" stroke-width="2" fill="none" opacity=".7"><path d="M40 100 L120 130 L80 170 L170 160 L130 215"/><path d="M200 95 L260 135 L215 195"/></g>
+    <g fill="#9fc3d4"><circle cx="40" cy="100" r="9"/><circle cx="120" cy="130" r="9"/><circle cx="80" cy="170" r="9"/><circle cx="170" cy="160" r="9"/><circle cx="130" cy="215" r="9"/><circle cx="200" cy="95" r="9"/><circle cx="260" cy="135" r="9"/><circle cx="215" cy="195" r="9"/></g>
+    <path d="M40 255 H400" stroke="url(#g)" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>
+    <path d="M388 245 L402 255 L388 265" stroke="#f2b705" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="36" y="300" fill="#7fe0e0" font-size="14" font-weight="700" letter-spacing="2">TO-BE</text>
+    <g><rect x="36" y="318" width="86" height="40" rx="10" fill="#1fa3a3"/><rect x="146" y="318" width="86" height="40" rx="10" fill="#2f86a6"/><rect x="256" y="318" width="86" height="40" rx="10" fill="#4a6fa5"/><rect x="346" y="318" width="60" height="40" rx="10" fill="#f2b705"/></g>
+    <g stroke="#fff" stroke-width="2"><path d="M122 338 H146"/><path d="M232 338 H256"/><path d="M342 338 H346"/></g>
+  </svg>
+</div></section>
+
+<div class="trust"><div class="wrap"><div class="stats">
+  <div class="stat"><b>2014</b><span>設立</span></div>
+  <div class="stat"><b>34名</b><span>専門メンバー</span></div>
+  <div class="stat"><b>GeneXus</b><span>認定ビジネスパートナー</span></div>
+  <div class="stat"><b>IFS</b><span>Authorized Partner</span></div>
+</div></div></div>
+
+<section id="services"><div class="wrap">
+  <span class="eyebrow">Services</span>
+  <h2>4つの事業ドメインで、DXを一気通貫に</h2>
+  <p class="lead">課題の整理から開発・保守まで。必要な領域だけでも、フルサイクルでもご活用いただけます。</p>
+  <div class="cards">
+    <a class="card" href="#"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7l3 9M16 7l-3 9M8.5 6h7"/></svg></div><h3>コンサルティング</h3><p>複雑な現状業務(AS-IS)を整理・分析し、将来構想(TO-BE)をお客様と作り上げます。WMS選定・導入支援も。</p><span class="more">詳しく見る</span></a>
+    <a class="card" href="#"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>GeneXus開発</h3><p>要件定義から開発、内製化支援、保守まで。システムを長く使い続けられるよう、フルサイクルで支援します。</p><span class="more">詳しく見る</span></a>
+    <a class="card" href="#"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5"/></svg></div><h3>パッケージSIサービス</h3><p>国内外の優れたソリューションの導入検討・導入・開発、稼働後の保守サービスまで提供します。</p><span class="more">詳しく見る</span></a>
+    <a class="card" href="#"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 00-3 11v3h6v-3a6 6 0 00-3-11zM9.5 20.5h5"/></svg></div><h3>オリジナルソリューション</h3><p>これまでの知見・ノウハウをもとに独自ソリューションを構築。資産フロー管理、タスクトラッキングなど。</p><span class="more">詳しく見る</span></a>
+  </div>
+</div></section>
+
+<section class="purpose" id="about"><div class="wrap pgrid">
+  <div>
+    <span class="eyebrow">Our Purpose</span>
+    <h2>プロセス中心で考えることで、<br>利害を超えた大きな成果へ。</h2>
+    <p class="lead">私たちが大切にしているのは継続的なエンジニアリング。プロセスフローの標準化とデジタル化によって、To-Beがそのまま将来のAs-Isとして使え、あらゆる企業活動のスピードアップにつながります。</p>
+    <p style="margin-top:28px"><a class="btn btn-line" href="#">Our Story を読む</a></p>
+  </div>
+  <div class="steps">
+    <div class="step"><i>1</i><div><b>可視化</b><span>As-Isの業務プロセスを整理・分析</span></div></div>
+    <div class="step"><i>2</i><div><b>標準化</b><span>To-Beをお客様と共に設計</span></div></div>
+    <div class="step"><i>3</i><div><b>実装・内製化</b><span>GeneXus／パッケージで素早く形に</span></div></div>
+    <div class="step"><i>4</i><div><b>継続改善</b><span>保守・運用で Future Proof を維持</span></div></div>
+  </div>
+</div></section>
+
+<section id="cases"><div class="wrap">
+  <span class="eyebrow">Case Studies</span>
+  <h2>導入事例</h2>
+  <div class="cases">
+    <a class="case" href="#"><div class="th th1">共同配送の<br>パイオニア</div><div class="bd"><span class="tag">GeneXus・内製化</span><h3>サンロジスティックス様：ベンダー依存からの脱却と内製化による業務変革</h3><p>GeneXus Day 2026 講演動画を公開中。</p></div></a>
+    <a class="case" href="#"><div class="th th2">営業店<br>システム</div><div class="bd"><span class="tag">GeneXus・内製化</span><h3>りそなホールディングス様：営業店システムをGeneXusで刷新</h3><p>ローコード開発による内製化の取り組み。</p></div></a>
+    <a class="case" href="#"><div class="th th3">タスク<br>トラッキング</div><div class="bd"><span class="tag">オリジナルソリューション</span><h3>ASKUL LOGIST様：大阪EC物流センターへのTTS導入</h3><p>物流現場の作業を可視化し、生産性を向上。</p></div></a>
+  </div>
+</div></section>
+
+<section class="insight" id="insight"><div class="wrap">
+  <span class="eyebrow">Insights</span>
+  <h2>CLO元年シリーズ：物流を経営の言語に</h2>
+  <div class="ins-grid">
+    <a class="ins" href="#"><span class="no">CLO元年 ①</span><h3>CLO就任後に着手すべき業務可視化とは</h3><p>WMS刷新やDXの前に着手すべき「プロセス可視化」を、理由と進め方とともに解説。</p></a>
+    <a class="ins" href="#"><span class="no">CLO元年 ②</span><h3>WMS選定で失敗しないために</h3><p>失敗の多くはシステムではなく選定の進め方にある。正しい順序を解説。</p></a>
+    <a class="ins" href="#"><span class="no">CLO元年 ③</span><h3>物流を経営アジェンダに変える言語</h3><p>物流コスト・事業成果・投資対効果。役員会議で語るための3つの視点。</p></a>
+  </div>
+</div></section>
+
+<section id="news"><div class="wrap split">
+  <div>
+    <span class="eyebrow">News</span><h2>最新ニュース</h2>
+    <ul class="news">
+      <li><time>2026/03/10</time><a href="#">本社オフィス移転のお知らせ</a></li>
+      <li><time>2026/02/17</time><a href="#">【GeneXus Day 2026講演動画】サンロジスティックス様</a></li>
+      <li><time>2026/01/09</time><a href="#">新年のご挨拶</a></li>
+      <li><time>2025/12/08</time><a href="#">GeneXus Day 2026開催決定</a></li>
+    </ul>
+  </div>
+  <div>
+    <span class="eyebrow">Partners</span><h2>パートナー</h2>
+    <div class="logos">
+      <div><img src="img/ForScreenLogoGX_BusinessPartner.png" alt="GeneXus Business Partner"></div>
+      <div><img src="img/IFS_Partner-Program-badges-06_2025_Authorized-Partner.png" alt="IFS Authorized Partner"></div>
+      <div><img src="img/iGrafx_logo-black.png" alt="iGrafx"></div>
+      <div><img src="img/sps-logo.jpg" alt="SPS"></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="final" id="contact"><div class="wrap">
+  <h2>まずは課題をお聞かせください</h2>
+  <p>ローコード開発と業務プロセス改善の専門家が、貴社のDX推進をサポートします。</p>
+  <a class="btn btn-primary" href="#">お問い合わせはこちら</a>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© Innovative Solutions Inc.</span><span>東京都港区芝浦三丁目1番1号 msb Tamachi 田町ステーションタワーN 31F</span></div></footer>
+</body>
+</html>
