@@ -334,12 +334,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
   e.target.querySelectorAll('[data-n]').forEach(el=>{const t=+el.dataset.n,s=performance.now();(function f(n){const p=Math.min((n-s)/1200,1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(s)})}}),{threshold:.15});
 document.querySelectorAll('.rv,.matrix').forEach(e=>io.observe(e));
 // network canvas: nodes converge toward a clean line (AS-IS -> TO-BE)
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[],mx=-999,my=-999;
 function size(){const r=cv.getBoundingClientRect(),d=devicePixelRatio||1;W=cv.width=r.width*d;H=cv.height=r.height*d;cx.setTransform(d,0,0,d,0,0);W/=d;H/=d;
   const n=Math.round(Math.min(90,W/16));pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}))}
-addEventListener('resize',size);size();
+addEventListener('resize',()=>{size();if(reduce)draw()});size();
 cv.parentElement.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
-const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 function draw(){cx.clearRect(0,0,W,H);
   for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
     const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);if(d<120){p.x+=dx/d*1.2;p.y+=dy/d*1.2}}
